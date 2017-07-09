@@ -1,0 +1,84 @@
+﻿@model List<SW.Entities.ProductDTO>
+
+@{
+    ViewBag.Title = "Wishlist";
+    Layout = "~/Views/Shared/_MyLayout.cshtml";
+}
+
+<h2> My WishList </h2>
+
+<h2> My WishList </h2>
+
+
+@{
+    int total = 0;
+    if (Shopping_Website.Security.SessionManager.Customer == null)
+    {
+        <h1 style="color:green">Please Sign In First</h1>
+    }
+    else
+    {
+        <table class="table table-bordered table-responsive">
+            <thead>
+                <tr>
+                    <th>
+                        Sr. No#
+                    </th>
+                    <th>
+                        Product Name
+                    </th>
+                    <th>
+                        Picture
+                    </th>
+                    <th>
+                        Price
+                    </th>
+                    <th>
+                        Remove
+                    </th>
+                    <th>
+                        Add To Cart
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @{
+        for (int i = 0; i < @Model.Count; i++)
+        {
+            total = total + @Model[i].p_price;
+            <tr>
+                <td>@i</td>
+                <td>
+                    @Model[i].p_name
+                </td>
+                <td>
+                    <img src="" />
+                </td>
+                <td>
+                    @Model[i].p_price
+                </td>
+                <td>
+                    <a href="/Home/RemoveItemFromWishlist?cid=@Shopping_Website.Security.SessionManager.Customer.ID&pid=@Model[i].pid"><button type="button" class="btn btn-default remove_from_wishlist_btn">Remove</button></a>
+                </td>
+                <td>
+                    <a href="/Home/AddFromWishlistToCart?cid=@Shopping_Website.Security.SessionManager.Customer.ID&pid=@Model[i].pid"><button type="button" class="btn btn-success add_to_cart_from_wishlist_btn">Add To Cart</button></a>
+                </td>
+            </tr>
+        }
+                }
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td style="font-weight:bold;background-color:red;color:white">Total</td>
+                    <td id="total">@total</td>
+
+                </tr>
+            </tbody>
+        </table>
+        <div class="col-lg-3 col-lg-offset-9">
+            <button class="btn btn-success btn-lg">Check Out</button>
+            <a href="/Home/Home"><button class="btn btn-link btn-lg pull-right">Continue Shopping</button></a>
+        </div>
+    }
+}
+
