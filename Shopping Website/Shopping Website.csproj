@@ -171,6 +171,7 @@
     <Content Include="Views\Home\Wishlist.cshtml" />
     <Content Include="Views\Home\Account.cshtml" />
     <Content Include="Views\Home\AdminPanel.cshtml" />
+    <Content Include="Views\Home\DisplayAllItems.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DBHelper\SW.Entities.csproj">

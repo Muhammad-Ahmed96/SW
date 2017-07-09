@@ -30,16 +30,7 @@
         font-weight: bold;
     }
 
-    hr{
-        display:block;
-        margin-top:0.5em;
-        margin-bottom:0.5em;
-        margin-left:auto;
-        margin-right:auto;
-        border-style:solid;
-        border-width:2px;
-        border-color:red;
-    }
+
     .middle {
         transition: .5s ease;
         opacity: 0;
@@ -60,12 +51,13 @@
     <div class="container" style="width:200px">
         <ul class="list-group" style="cursor:pointer">
             <li class="list-group-item" style="background-color:red;color:white;font:bold">Categories</li>
-            <li class="list-group-item litem">Mobiles</li>
-            <li class="list-group-item litem">Computers</li>
-            <li class="list-group-item litem">Clothes</li>
-            <li class="list-group-item litem">Watches</li>
-            <li class="list-group-item litem">Cameras</li>
-            <li class="list-group-item litem">Printers &  Scanners</li>
+            <li class="list-group-item litem"><a href="/Home/DisplayAllItems?category=mobiles" style="text-decoration:none">Mobiles</a></li>
+            <li class="list-group-item litem"><a href="/Home/DisplayAllItems?category=computers" style="text-decoration:none">Computers</a></li>
+            <li class="list-group-item litem"><a href="/Home/DisplayAllItems?category=clothes" style="text-decoration:none">Clothes</a></li>
+            <li class="list-group-item litem"><a href="/Home/DisplayAllItems?category=watches" style="text-decoration:none">Watches</a></li>
+            <li class="list-group-item litem"><a href="/Home/DisplayAllItems?category=cameras" style="text-decoration:none">Cameras</a></li>
+            <li class="list-group-item litem"><a href="/Home/DisplayAllItems?category=cameras" style="text-decoration:none">Shoes</a></li>
+            <li class="list-group-item litem"><a href="/Home/DisplayAllItems?category=printers" style="text-decoration:none">Printers</a></li>
         </ul>
     </div>
     <div class="container" style="border:solid 1px black;padding:8px">
@@ -171,67 +163,97 @@
         </div>
     </div>
     <div class="text-right">
-        <button type="button" class="btn btn-info">More Items</button>
-    </div>
-</div>
-
-
-<div class="container">
-    <div>
-        <h2 style="color:blue">Mostly Buyed</h2>
-    </div>
-    <div style="display:flex;flex-direction:row;align-items:center;border:1px solid black;padding:20px;background-color:#f6f6f6">
-
-        <div class="col-sm-3 col-md-3">
-            <div class="thumbnail">
-                <img src="~/Images/hp.jpg" class="image"/>
-                <div class="middle">
-                    <div>
-                        <button type="button" class="btn btn-default add_to_cart_btn"><span class="glyphicon glyphicon-shopping-cart"></span> Add To Cart</button>
-                    </div>
-                </div>
-                <h3 class="text-center">HP Pavilion</h3>
-                <div class="text-center" style="font-weight:bold">Price:58000</div>
-                <div class="text-center"><button type="button" class="btn btn-default add_to_wish_list"><span class="glyphicon glyphicon-heart-empty"></span>Add To Wishlist</button></div>
-                <!--<div class="text-center"><a href="#"><span class="glyphicon glyphicon-heart-empty">Add To WishList</span></a></div>-->
-            </div>
-        </div>
-
-        <div class="col-sm-3 col-md-3">
-            <div class="thumbnail">
-                <img src="~/Images/i2.png" />
-                <h3>Samsung galaxy S8 Plus</h3>
-                <div class="text-center" style="font-weight:bold">Price:58000</div>
-                <div class="text-center"><button type="button" class="btn btn-default add_to_cart_btn" id="add_to_cart_btn"><span class="glyphicon glyphicon-shopping-cart"></span>Add To Cart</button></div>
-                <div class="text-center"><a href="#"><span class="glyphicon glyphicon-heart-empty">Add To WishList</span></a></div>
-            </div>
-        </div>
-
-
-        <div class="col-sm-3 col-md-3">
-            <div class="thumbnail">
-                <img src="~/Images/i3.png" />
-                <h3>Samsung galaxy S8 Plus</h3>
-                <div class="text-center" style="font-weight:bold">Price:58000</div>
-                <div class="text-center"><button type="button" class="btn btn-default add_to_cart_btn"><span class="glyphicon glyphicon-shopping-cart"></span>Add To Cart</button></div>
-                <div class="text-center"><a href="#"><span class="glyphicon glyphicon-heart-empty">Add To WishList</span></a></div>
-            </div>
-        </div>
-
-        <div class="col-sm-3 col-md-3">
-            <div class="thumbnail">
-                <img src="~/Images/i4.png" />
-                <h3>Samsung galaxy S8 Plus</h3>
-                <div class="text-center" style="font-weight:bold">Price:58000</div>
-                <div class="text-center"><button type="button" class="btn btn-default add_to_cart_btn"><span class="glyphicon glyphicon-shopping-cart"></span>Add To Cart</button></div>
-                <div class="text-center"><a href="#"><span class="glyphicon glyphicon-heart-empty">Add To WishList</span></a></div>
-            </div>
-        </div>
-    </div>
-    <div class="text-right">
         <button type="button" class="btn btn-info">More Items >>></button>
     </div>
 </div>
+
+
+    <div class="container">
+        <div>
+            <h2 style="color:blue">Mostly Buyed</h2>
+        </div>
+        <div style="display:flex;flex-direction:row;align-items:center;border:1px solid black;padding:20px;background-color:#f6f6f6">
+
+            <div class="col-sm-3 col-md-3">
+                <div class="thumbnail">
+                    <img src="~/Images/samsung%20s8.png" class="image" />
+                    <div class="middle">
+                        <div>
+                            <a href="#"><button type="button" class="btn btn-default add_to_cart_btn"><span class="glyphicon glyphicon-shopping-cart"></span> Add To Cart</button></a>
+                        </div>
+                    </div>
+
+                    <a style="text-decoration:none" class="text-center" href="#"><h3>Samsung galaxy S8</h3></a>
+                    <div class="text-center" style="font-weight:bold">Price:96000</div>
+                    <div class="text-center">
+                        <a href="#"><button type="button" class="btn btn-default add_to_wish_list"><span class="glyphicon glyphicon-heart-empty"></span>Add To Wishlist</button></a>
+                    </div>
+                    <!--<div class="text-center"><a href="#"><span class="glyphicon glyphicon-heart-empty">Add To WishList</span></a></div>-->
+                </div>
+            </div>
+
+
+            <div class="col-sm-3 col-md-3">
+                <div class="thumbnail">
+                    <img src="~/Images/samsung%20s8.png" class="image" />
+                    <div class="middle">
+                        <div>
+                            <a href="#"><button type="button" class="btn btn-default add_to_cart_btn"><span class="glyphicon glyphicon-shopping-cart"></span> Add To Cart</button></a>
+                        </div>
+                    </div>
+
+                    <a style="text-decoration:none" class="text-center" href="#"><h3>Samsung galaxy S8</h3></a>
+                    <div class="text-center" style="font-weight:bold">Price:96000</div>
+                    <div class="text-center">
+                        <a href="#"><button type="button" class="btn btn-default add_to_wish_list"><span class="glyphicon glyphicon-heart-empty"></span>Add To Wishlist</button></a>
+                    </div>
+                    <!--<div class="text-center"><a href="#"><span class="glyphicon glyphicon-heart-empty">Add To WishList</span></a></div>-->
+                </div>
+            </div>
+
+
+
+            <div class="col-sm-3 col-md-3">
+                <div class="thumbnail">
+                    <img src="~/Images/samsung%20s8.png" class="image" />
+                    <div class="middle">
+                        <div>
+                            <a href="#"><button type="button" class="btn btn-default add_to_cart_btn"><span class="glyphicon glyphicon-shopping-cart"></span> Add To Cart</button></a>
+                        </div>
+                    </div>
+
+                    <a style="text-decoration:none" class="text-center" href="#"><h3>Samsung galaxy S8</h3></a>
+                    <div class="text-center" style="font-weight:bold">Price:96000</div>
+                    <div class="text-center">
+                        <a href="#"><button type="button" class="btn btn-default add_to_wish_list"><span class="glyphicon glyphicon-heart-empty"></span>Add To Wishlist</button></a>
+                    </div>
+                    <!--<div class="text-center"><a href="#"><span class="glyphicon glyphicon-heart-empty">Add To WishList</span></a></div>-->
+                </div>
+            </div>>
+
+            <div class="col-sm-3 col-md-3">
+                <div class="thumbnail">
+                    <img src="~/Images/samsung%20s8.png" class="image" />
+                    <div class="middle">
+                        <div>
+                            <a href="#"><button type="button" class="btn btn-default add_to_cart_btn"><span class="glyphicon glyphicon-shopping-cart"></span> Add To Cart</button></a>
+                        </div>
+                    </div>
+                    <a style="text-decoration:none" class="text-center" href="#"><h3>Samsung galaxy S8</h3></a>
+                    <div class="text-center" style="font-weight:bold">Price:96000</div>
+                    <div class="text-center">
+                        <a href="#"><button type="button" class="btn btn-default add_to_wish_list"><span class="glyphicon glyphicon-heart-empty"></span>Add To Wishlist</button></a>
+                    </div>
+                    <!--<div class="text-center"><a href="#"><span class="glyphicon glyphicon-heart-empty">Add To WishList</span></a></div>-->
+                </div>
+            </div>
+        </div>
+        <div class="text-right">
+            <button type="button" class="btn btn-info">More Items >>></button>
+        </div>
+    </div>
+
+   
 
 <div class="container banner" style="border:solid 1px black">
     <div class="col-lg-12"> 
@@ -260,50 +282,74 @@
 
         <div class="col-sm-3 col-md-3">
             <div class="thumbnail">
-                <img src="~/Images/i1.png" />
-                <h3>Samsung galaxy S8 Plus</h3>
-                <div class="text-center" style="font-weight:bold">Price:58000</div>
-                <div class="text-center"><button type="button" class="btn btn-default add_to_cart_btn"><span class="glyphicon glyphicon-shopping-cart"></span>Add To Cart</button></div>
-                <div class="text-center"><a href="#"><span class="glyphicon glyphicon-heart-empty">Add To WishList</span></a></div>
+                <img src="~/Images/samsung%20s8.png" class="image" />
+                <div class="middle">
+                    <div>
+                        <a href="#"><button type="button" class="btn btn-default add_to_cart_btn"><span class="glyphicon glyphicon-shopping-cart"></span> Add To Cart</button></a>
+                    </div>
+                </div>
+
+                <a style="text-decoration:none" class="text-center" href="#"><h3>Samsung galaxy S8</h3></a>
+                <div class="text-center" style="font-weight:bold">Price:96000</div>
+                <div class="text-center">
+                    <a href="#"><button type="button" class="btn btn-default add_to_wish_list"><span class="glyphicon glyphicon-heart-empty"></span>Add To Wishlist</button></a>
+                </div>
+                <!--<div class="text-center"><a href="#"><span class="glyphicon glyphicon-heart-empty">Add To WishList</span></a></div>-->
             </div>
         </div>
 
         <div class="col-sm-3 col-md-3">
             <div class="thumbnail">
-                <img src="~/Images/i2.png" />
-                <h3>Samsung galaxy S8 Plus</h3>
-                <div class="text-center" style="font-weight:bold">Price:58000</div>
-                <div class="text-center"><button type="button" class="btn btn-default add_to_cart_btn" id="add_to_cart_btn"><span class="glyphicon glyphicon-shopping-cart"></span>Add To Cart</button></div>
-                <div class="text-center"><a href="#"><span class="glyphicon glyphicon-heart-empty">Add To WishList</span></a></div>
+                <img src="~/Images/samsung%20s8.png" class="image" />
+                <div class="middle">
+                    <div>
+                        <a href="#"><button type="button" class="btn btn-default add_to_cart_btn"><span class="glyphicon glyphicon-shopping-cart"></span> Add To Cart</button></a>
+                    </div>
+                </div>
+
+                <a style="text-decoration:none" class="text-center" href="#"><h3>Samsung galaxy S8</h3></a>
+                <div class="text-center" style="font-weight:bold">Price:96000</div>
+                <div class="text-center">
+                    <a href="#"><button type="button" class="btn btn-default add_to_wish_list"><span class="glyphicon glyphicon-heart-empty"></span>Add To Wishlist</button></a>
+                </div>
+                <!--<div class="text-center"><a href="#"><span class="glyphicon glyphicon-heart-empty">Add To WishList</span></a></div>-->
             </div>
         </div>
 
 
         <div class="col-sm-3 col-md-3">
             <div class="thumbnail">
-                <img src="~/Images/i3.png" />
-                <h3>Samsung galaxy S8 Plus</h3>
-                <div class="text-center" style="font-weight:bold">Price:58000</div>
-                <div class="text-center"><button type="button" class="btn btn-default add_to_cart_btn"><span class="glyphicon glyphicon-shopping-cart"></span>Add To Cart</button></div>
-                <div class="text-center"><a href="#"><span class="glyphicon glyphicon-heart-empty">Add To WishList</span></a></div>
+                <img src="~/Images/samsung%20s8.png" class="image" />
+                <div class="middle">
+                    <div>
+                        <a href="#"><button type="button" class="btn btn-default add_to_cart_btn"><span class="glyphicon glyphicon-shopping-cart"></span> Add To Cart</button></a>
+                    </div>
+                </div>
+
+                <a style="text-decoration:none" class="text-center" href="#"><h3>Samsung galaxy S8</h3></a>
+                <div class="text-center" style="font-weight:bold">Price:96000</div>
+                <div class="text-center">
+                    <a href="#"><button type="button" class="btn btn-default add_to_wish_list"><span class="glyphicon glyphicon-heart-empty"></span>Add To Wishlist</button></a>
+                </div>
+                <!--<div class="text-center"><a href="#"><span class="glyphicon glyphicon-heart-empty">Add To WishList</span></a></div>-->
             </div>
         </div>
 
         <div class="col-sm-3 col-md-3">
             <div class="thumbnail">
-                <img src="~/Images/i4.png" />
-                <h3>Samsung galaxy S8 Plus</h3>
-                <div class="text-center" style="font-weight:bold">Price:58000</div>
-                @using (Html.BeginForm("LoginUser", "Home", FormMethod.Post))
-                {
-                    <form>
-                        <div class="text-center"><button type="submit" class="btn btn-default add_to_cart_btn"><span class="glyphicon glyphicon-shopping-cart"></span>Add To Cart</button></div>
-                        <input type="hidden" name="p_name" value="" />
-                    </form>
-                }
+                <img src="~/Images/samsung%20s8.png" class="image" />
+                <div class="middle">
+                    <div>
+                        <a href="#"><button type="button" class="btn btn-default add_to_cart_btn"><span class="glyphicon glyphicon-shopping-cart"></span> Add To Cart</button></a>
+                    </div>
+                </div>
 
-                
-                <div class="text-center"><a href="#"><span class="glyphicon glyphicon-heart-empty">Add To WishList</span></a></div>
+                <a style="text-decoration:none" class="text-center" href="#"><h3>Samsung galaxy S8</h3></a>
+                <div class="text-center" style="font-weight:bold">Price:96000</div>
+                <div class="text-center">
+                    <a href="#"><button type="button" class="btn btn-default add_to_wish_list"><span class="glyphicon glyphicon-heart-empty"></span>Add To Wishlist</button></a>
+                </div>
+                <!--<div class="text-center"><a href="#"><span class="glyphicon glyphicon-heart-empty">Add To WishList</span></a></div>-->
             </div>
         </div>
     </div>

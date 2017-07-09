@@ -49,5 +49,13 @@ namespace SW.BAL
         {
             return DAL.ProductDAO.deleteProductFromWishlist(c_id, p_id);
         }
+        public static List<SW.Entities.ProductDTO> getProducts(string category)
+        {
+            return DAL.ProductDAO.getProducts(category);
+        }
+        public static int deleteAllItemFromCart(int cid)
+        {
+            return DAL.ProductDAO.deleteAllItemFromCart(cid);
+        }
     }
 }

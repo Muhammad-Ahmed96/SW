@@ -46,6 +46,26 @@ namespace SW.DAL
                 return list;
             }
         }
+
+        public static List<SW.Entities.ProductDTO> getProducts(string category)
+        {
+            string query = string.Format("select * from products where category='" + category + "'");
+            using (DBHelper helper = new DBHelper())
+            {
+                var reader = helper.ExecuteReader(query);
+                List<ProductDTO> list = new List<ProductDTO>();
+                while (reader.Read())
+                {
+                    ProductDTO dto = new ProductDTO();
+                    dto.pid = reader.GetInt32(0);
+                    dto.p_name = reader.GetString(1);
+                    dto.p_price = reader.GetInt32(2);
+                    list.Add(dto);
+                }
+                return list;
+            }
+        }
+
         public static ProductDTO getProduct(int pid)
         {
             string query = string.Format("select * from products where pid={0}", pid);
@@ -146,6 +166,15 @@ namespace SW.DAL
                 while (reader.Read())
                     list.Add(reader.GetInt32(0));
                 return list;
+            }
+        }
+
+        public static int deleteAllItemFromCart(int cid)
+        {
+            string query = "delete from cart where c_id=" + cid;
+            using(DBHelper helper=new DBHelper())
+            {
+                return helper.ExecuteQuery(query);
             }
         }
     }

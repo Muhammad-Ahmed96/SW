@@ -147,6 +147,18 @@ namespace Shopping_Website.Controllers
            
             return View();
         }
+        public ActionResult DisplayAllItems(string category)
+        {
+            List<SW.Entities.ProductDTO> list = ProductBO.getProducts(category);
+            ViewBag.Name = category;
+            return View(list);
+        }
+
+        public ActionResult RemoveAllFromCart(string c_id)
+        {
+            ProductBO.deleteAllItemFromCart(Convert.ToInt32(c_id));
+            return Redirect("/Home/Checkout?c_id=" + c_id);
+        }
     }
 
 }

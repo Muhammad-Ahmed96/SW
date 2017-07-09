@@ -1,0 +1,75 @@
+﻿@model List<SW.Entities.ProductDTO>
+
+@{
+    ViewBag.Title = "DisplayAllItems";
+    Layout = "~/Views/Shared/_MyLayout.cshtml";
+}
+
+
+<style>
+    .banner:hover .image {
+        opacity: 0.6;
+    }
+
+    .thumbnail:hover .image {
+        opacity: 0.6;
+    }
+
+    .thumbnail:hover .middle {
+        opacity: 1;
+    }
+
+    .image {
+        transition: .5s ease;
+    }
+
+
+    .litem:hover {
+        background-color: black;
+        font-size: 20px;
+        color: white;
+        font-weight: bold;
+    }
+
+    .middle {
+        transition: .5s ease;
+        opacity: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+    }
+</style>
+
+<div class="container">
+    <h2> @ViewBag.Name</h2>
+    <h2> @ViewBag.Name</h2>
+    <div>
+        @if(Model.Count==0)
+        {
+            <h1>No Items in This Category</h1>
+        }
+        @{
+            for (int i = 0; i < Model.Count; i++)
+            {
+                <div class="col-sm-3 col-md-3">
+                    <div class="thumbnail">
+                        <img src="~/Images/camera.jpg" class="image" />
+                        <div class="middle">
+                            <div>
+                                <a href="/Home/AddtoCart?cid=@Shopping_Website.Security.SessionManager.Customer.ID&pid=@Model[i].pid"><button type="button" class="btn btn-default add_to_cart_btn"><span class="glyphicon glyphicon-shopping-cart"></span> Add To Cart</button></a>
+                            </div>
+                        </div>
+                        <h3 class="text-center">@Model[i].p_name</h3>
+                        <div class="text-center" style="font-weight:bold">Price:@Model[i].p_price</div>
+                        <div class="text-center">
+                            <a href="/Home/AddtoWishlist?c_id=@Shopping_Website.Security.SessionManager.Customer.ID&p_id=@Model[i].pid"><button type="button" class="btn btn-default add_to_wish_list"><span class="glyphicon glyphicon-heart-empty"></span>Add To Wishlist</button></a>
+                        </div>
+                        <!--<div class="text-center"><a href="#"><span class="glyphicon glyphicon-heart-empty">Add To WishList</span></a></div>-->
+                    </div>
+                </div>
+            }
+        }
+    </div>
+</div>
