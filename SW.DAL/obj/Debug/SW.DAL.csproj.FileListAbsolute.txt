@@ -1,0 +1,7 @@
+C:\Users\Muhammad Shahid\documents\visual studio 2013\Projects\Shopping Website\SW.DAL\bin\Debug\SW.DAL.dll
+C:\Users\Muhammad Shahid\documents\visual studio 2013\Projects\Shopping Website\SW.DAL\bin\Debug\SW.DAL.pdb
+C:\Users\Muhammad Shahid\documents\visual studio 2013\Projects\Shopping Website\SW.DAL\bin\Debug\DBHelper.dll
+C:\Users\Muhammad Shahid\documents\visual studio 2013\Projects\Shopping Website\SW.DAL\bin\Debug\DBHelper.pdb
+C:\Users\Muhammad Shahid\documents\visual studio 2013\Projects\Shopping Website\SW.DAL\obj\Debug\SW.DAL.csprojResolveAssemblyReference.cache
+C:\Users\Muhammad Shahid\documents\visual studio 2013\Projects\Shopping Website\SW.DAL\obj\Debug\SW.DAL.dll
+C:\Users\Muhammad Shahid\documents\visual studio 2013\Projects\Shopping Website\SW.DAL\obj\Debug\SW.DAL.pdb

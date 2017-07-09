@@ -1,0 +1,5 @@
+C:\Users\Muhammad Shahid\documents\visual studio 2013\Projects\Shopping Website\DBHelper\bin\Release\DBHelper.dll
+C:\Users\Muhammad Shahid\documents\visual studio 2013\Projects\Shopping Website\DBHelper\bin\Release\DBHelper.pdb
+C:\Users\Muhammad Shahid\documents\visual studio 2013\Projects\Shopping Website\DBHelper\obj\Release\SW.Entities.csprojResolveAssemblyReference.cache
+C:\Users\Muhammad Shahid\documents\visual studio 2013\Projects\Shopping Website\DBHelper\obj\Release\DBHelper.dll
+C:\Users\Muhammad Shahid\documents\visual studio 2013\Projects\Shopping Website\DBHelper\obj\Release\DBHelper.pdb

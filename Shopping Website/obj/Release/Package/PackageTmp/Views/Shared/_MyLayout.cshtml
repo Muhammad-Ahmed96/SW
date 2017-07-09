@@ -1,0 +1,191 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <title>@ViewBag.Title</title>
+    @RenderSection("Scripts", false)
+</head>
+<body>
+    <div class="container">
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-header">
+                <a href="/Home/Home" class="navbar-brand">My Shopping Site</a>
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                   
+                    <li><a href="#">Contact Us</a></li>
+                    @{
+                        if (Shopping_Website.Security.SessionManager.Customer!=null) {
+                            if (Shopping_Website.Security.SessionManager.Customer.isAdmin == true) {
+                            <li>
+                                <a href="/Home/AdminPanel?@Shopping_Website.Security.SessionManager.Customer.ID">Admin Panel</a>
+                            </li>
+                            }
+                        }
+                    }
+                </ul>
+                <div class="col-lg-4">
+                    <form class="navbar-form">
+                        <div class="input-group">
+                            <input type="text" placeholder="Search Item" class="form-control">
+                            <div class="input-group-btn">
+                                <button type="button" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <ul class="nav navbar-nav navbar-right">
+                    @{
+                        if (Shopping_Website.Security.SessionManager.Customer == null)
+                        {
+                            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Account </a></li>
+                        }
+                        else
+                        {
+                            <li><a href="/Home/Account?id=@Shopping_Website.Security.SessionManager.Customer.ID"><span class="glyphicon glyphicon-user"></span> @Shopping_Website.Security.SessionManager.Customer.name</a></li>
+                        }
+
+
+
+                        if (Shopping_Website.Security.SessionManager.Customer != null)
+                        {
+                            <li>
+                                <a href="/Home/Checkout?c_id=@Shopping_Website.Security.SessionManager.Customer.ID">
+                                    <span class="glyphicon glyphicon-shopping-cart"></span> My Cart
+                                    <span class="badge">@SW.BAL.ProductBO.getCountOfProductsOfCustomer(Shopping_Website.Security.SessionManager.Customer.ID)</span>
+                                </a>
+                            </li>
+                            <li><a href="/Home/Wishlist?c_id=@Shopping_Website.Security.SessionManager.Customer.ID"><span class="glyphicon glyphicon-heart"></span> My Wishlist <span class="badge">@SW.BAL.ProductBO.getCountOfProductsOfCustomerInWishlist(Shopping_Website.Security.SessionManager.Customer.ID)</span></a></li>
+                        }
+                        else
+                        {
+                            <li><a href="/Home/Checkout"><span class="glyphicon glyphicon-shopping-cart"></span> My Cart <span class="badge">0</span></a></li>
+                            <li><a href="/Home/Wishlist"><span class="glyphicon glyphicon-heart"></span> My Wishlist <span class="badge">0</span></a></li>
+                        }
+                    }
+                    @{
+                        if (Shopping_Website.Security.SessionManager.Customer != null)
+                        {
+                            <li>
+                                <a href="/Home/Logout"> Logout <span class="glyphicon glyphicon-log-out"></span></a>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-log-in" id="loginTxt"></span> Login</a>
+                                <div class="dropdown-menu" style="padding:20px">
+                                    <label>Sign In</label>
+                                    <div class="form-group">
+                                        <input name="username" id="username" type="email" class="form-control" style="width: 200px" placeholder="Email Address">
+                                    </div>
+                                    <div class="form-group">
+                                        <input name="password" id="password" type="password" class="form-control" style="width: 200px" placeholder="Password">
+                                    </div>
+                                    <div class="checkbox">
+                                        <label style="color:blue"><input type="checkbox"> Remember Me</label>
+                                    </div>
+
+                                    <button type="submit" id="btnLogin" class="btn btn-default btn-block" style="width: 200px">Login</button>
+                                    <div class="help-block text-right"><a href="">Forget the password ?</a></div>
+                                    <div class="text-center"><span style="font-weight:bold">Not A Member</span> </div>
+                                    <button type="submit" id="btnSignup" class="btn btn-success btn-block" style="width: 200px">Sign Up</button>
+                                </div>
+                            </li>
+                        }
+                    }
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div>
+        @RenderBody()
+    </div>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script>
+
+
+        $('.carousel').carousel();
+        $('.dropdown').on('show.bs.dropdown', function () {
+            $(this).find('.dropdown-menu').first().stop(true, true).slideDown();
+        });
+
+        // Add slideUp animation to Bootstrap dropdown when collapsing.
+        $('.dropdown').on('hide.bs.dropdown', function () {
+            $(this).find('.dropdown-menu').first().stop(true, true).slideUp();
+        });
+        $(function () {
+
+            $(".delete_btn").click(function () {
+                alert("Deleted");
+            });
+
+            $(".add_to_cart_btn").mouseover(function () {
+                $(this).removeClass("btn-default");
+                $(this).addClass("btn-danger");
+
+            });
+            $(".add_to_cart_btn").mouseleave(function () {
+                $(this).removeClass("btn-danger");
+                $(this).addClass("btn-default");
+
+            });
+
+            $(".add_to_wish_list").mouseover(function () {
+                $(this).removeClass("btn-default");
+                $(this).addClass("btn-info");
+
+            });
+            $(".add_to_wish_list").mouseleave(function () {
+                $(this).removeClass("btn-info");
+                $(this).addClass("btn-default");
+
+            });
+
+            $("#btnLogin").click(function () {
+
+                var login = $("#username").val();
+                var pass = $("#password").val();
+
+                var d = { "login": login, "password": pass };
+
+                var settings = {
+                    type: "POST",
+                    dataType: "json",
+                    url: "/Home/ValidateUser",
+                    data: d,
+                    success: function (resp) {
+                        if (resp.valid == true) {
+                            location.href = resp.urlToRedirect;
+                        }
+                        else {
+                            alert("Invalid Login");
+                        }
+                    },
+                    error: function (e) {
+                        alert("error");
+                    }
+                };
+                $.ajax(settings);
+                return false;
+            });
+        });
+
+    </script>
+</body>
+</html>
