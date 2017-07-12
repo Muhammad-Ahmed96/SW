@@ -27,6 +27,15 @@ namespace SW.DAL
             }
         }
 
+        public static int Register(CustomerDTO dto)
+        {
+            string query = "insert into customers values('" + dto.email + "','" + dto.password + "','" + dto.name + "','" + dto.address + "','" + dto.country + "','" + dto.city + "','" + dto.phone_no + "'," + 0 + "," + 1 + "')";
+            using (DBHelper helper = new DBHelper())
+            {
+                return helper.ExecuteQuery(query);
+            }
+        }
+
         public static CustomerDTO getCustomerInfo(int id)
         {
             string query = "select * from customers where id=" + id;

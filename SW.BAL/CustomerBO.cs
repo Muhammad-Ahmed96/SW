@@ -23,5 +23,10 @@ namespace SW.BAL
         {
             return DAL.CustomerDAO.getAccountInfo(id);
         }
+        public static int Register(CustomerDTO dto)
+        {
+            return DAL.CustomerDAO.Register(dto);
+        }
+
     }
 }

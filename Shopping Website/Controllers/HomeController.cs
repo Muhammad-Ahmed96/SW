@@ -20,8 +20,7 @@ namespace Shopping_Website.Controllers
         public ActionResult Home()
         
         {
-            List<SW.Entities.ProductDTO> list = new List<ProductDTO>();
-            list.AddRange(ProductBO.getProducts());
+            List<SW.Entities.ProductDTO> list = ProductBO.getProducts();
             return View(list);
         }
 
@@ -158,6 +157,49 @@ namespace Shopping_Website.Controllers
         {
             ProductBO.deleteAllItemFromCart(Convert.ToInt32(c_id));
             return Redirect("/Home/Checkout?c_id=" + c_id);
+        }
+
+
+        public JsonResult Register(CustomerDTO dto)
+        {
+            Object data = null;
+            try
+            {
+                var url = "";
+                var flag = false;
+                var message = "";
+
+                var obj = SW.BAL.CustomerBO.Register(dto);
+                if (obj != 0)
+                {
+                    flag = true;
+                    url = Url.Content("~/Home/Home");
+                    message = "Account Created Successfully";
+                }
+
+                data = new
+                {
+                    valid = flag,
+                    urlToRedirect = url,
+                    msg=message
+                };
+
+            }
+            catch (Exception)
+            {
+                data = new
+                {
+                    valid = false,
+                    urlToRedirect = "",
+                    msg=""
+                };
+            }
+            return Json(data, JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult SignUp()
+        {
+            return View();
         }
     }
 

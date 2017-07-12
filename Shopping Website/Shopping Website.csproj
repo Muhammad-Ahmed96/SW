@@ -172,6 +172,7 @@
     <Content Include="Views\Home\Account.cshtml" />
     <Content Include="Views\Home\AdminPanel.cshtml" />
     <Content Include="Views\Home\DisplayAllItems.cshtml" />
+    <Content Include="Views\Home\SignUp.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DBHelper\SW.Entities.csproj">

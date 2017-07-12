@@ -88,21 +88,23 @@
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-log-in" id="loginTxt"></span> Login</a>
                                 <div class="dropdown-menu" style="padding:20px">
-                                    <label>Sign In</label>
-                                    <div class="form-group">
-                                        <input name="username" id="username" type="email" class="form-control" style="width: 200px" placeholder="Email Address">
-                                    </div>
-                                    <div class="form-group">
-                                        <input name="password" id="password" type="password" class="form-control" style="width: 200px" placeholder="Password">
-                                    </div>
-                                    <div class="checkbox">
-                                        <label style="color:blue"><input type="checkbox"> Remember Me</label>
-                                    </div>
+                                    <form>
+                                        <label>Sign In</label>
+                                        <div class="form-group">
+                                            <input name="username" id="username" type="email" class="form-control" style="width: 200px" placeholder="Email Address">
+                                        </div>
+                                        <div class="form-group">
+                                            <input name="password" id="password" type="password" class="form-control" style="width: 200px" placeholder="Password">
+                                        </div>
+                                        <div class="checkbox">
+                                            <label style="color:blue"><input type="checkbox"> Remember Me</label>
+                                        </div>
 
-                                    <button type="submit" id="btnLogin" class="btn btn-default btn-block" style="width: 200px">Login</button>
-                                    <div class="help-block text-right"><a href="">Forget the password ?</a></div>
-                                    <div class="text-center"><span style="font-weight:bold">Not A Member</span> </div>
-                                    <button type="submit" id="btnSignup" class="btn btn-success btn-block" style="width: 200px">Sign Up</button>
+                                        <button type="submit" id="btnLogin" class="btn btn-default btn-block" style="width: 200px">Login</button>
+                                        <div class="help-block text-right"><a href="">Forget the password ?</a></div>
+                                        <div class="text-center"><span style="font-weight:bold">Not A Member</span> </div>
+                                        <a href="/Home/SignUp"><button type="submit" id="btnSignup" class="btn btn-success btn-block" style="width: 200px">Sign Up</button></a>
+                                    </form>
                                 </div>
                             </li>
                         }
@@ -112,7 +114,7 @@
             </div>
         </div>
     </div>
-    <div>
+    <div class="container">
         @RenderBody()
     </div>
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
@@ -121,6 +123,7 @@
 
 
         $('.carousel').carousel();
+        $(".dropdown-toggle").dropdown();
         $('.dropdown').on('show.bs.dropdown', function () {
             $(this).find('.dropdown-menu').first().stop(true, true).slideDown();
         });
@@ -130,6 +133,40 @@
             $(this).find('.dropdown-menu').first().stop(true, true).slideUp();
         });
         $(function () {
+
+            $("#register_btn").click(function () {
+                var email = $("#email_txt").val();
+                var name = $("#name_txt").val();
+                var password = $("#password_txt").val();
+                var address = $("#address_txt").val();
+                var country = $("#country_txt").val();
+                var city = $("#city").val();
+                var phone_no = $("#phone_no").val();
+                var gender = $("#gen").selected();
+
+                var d = { "email": email, "password": password, "name": name, "address": address, "country": country, "city": city, "phone_no": phone_no, "gender": gender, "isAdmin": 0, "isActive": 1 };
+
+
+                var settings = {
+                    type: "POST",
+                    dataType: "json",
+                    url: "/Home/Register",
+                    data: d,
+                    success: function (resp) {
+                        if (resp.valid == true) {
+                            location.href = resp.urlToRedirect;
+                        }
+                        else {
+                            alert("Registeration Failed,Try Again");
+                        }
+                    },
+                    error: function (e) {
+                        alert("error");
+                    }
+                };
+                $.ajax(settings);
+                return false;
+            });
 
             $("#checkout_btn").click(function () {
                 alert("Your Items are sent for shipment");

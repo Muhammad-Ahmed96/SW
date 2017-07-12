@@ -97,14 +97,34 @@
                 <img src="~/Images/samsung%20s8.png" class="image"/>
                 <div class="middle">
                     <div>
-                        <a href="/Home/AddtoCart?cid=@Shopping_Website.Security.SessionManager.Customer.ID&pid=@Model[i].pid"><button type="button" class="btn btn-default add_to_cart_btn"><span class="glyphicon glyphicon-shopping-cart"></span> Add To Cart</button></a> 
+                        @{
+                            if(Shopping_Website.Security.SessionManager.Customer!=null)
+                            {
+                                <a href="/Home/AddtoCart?cid=@Shopping_Website.Security.SessionManager.Customer.ID&pid=@Model[i].pid"><button type="button" class="btn btn-default add_to_cart_btn"><span class="glyphicon glyphicon-shopping-cart"></span> Add To Cart</button></a> 
+                            }
+                            else
+                            {
+                                <a href="#"><button type="button" class="btn btn-default add_to_cart_btn"><span class="glyphicon glyphicon-shopping-cart"></span> Add To Cart</button></a> 
+                            }
+                        }
+                        
                     </div>
                 </div>
 
                 <a style="text-decoration:none" class="text-center" href="#"><h3>@Model[i].p_name</h3></a>
                 <div class="text-center" style="font-weight:bold">Price:@Model[i].p_price</div>
                 <div class="text-center">
-                    <a href="/Home/AddtoWishlist?c_id=@Shopping_Website.Security.SessionManager.Customer.ID&p_id=@Model[i++].pid"><button type="button" class="btn btn-default add_to_wish_list"><span class="glyphicon glyphicon-heart-empty"></span>Add To Wishlist</button></a>
+                    @{
+        if (Shopping_Website.Security.SessionManager.Customer != null)
+        {
+                <a href="/Home/AddtoWishlist?c_id=@Shopping_Website.Security.SessionManager.Customer.ID&p_id=@Model[i++].pid"><button type="button" class="btn btn-default add_to_wish_list"><span class="glyphicon glyphicon-heart-empty"></span>Add To Wishlist</button></a>
+        }
+        else
+        {
+                <a href="#"><button type="button" class="btn btn-default add_to_wish_list"><span class="glyphicon glyphicon-heart-empty"></span>Add To Wishlist</button></a>
+        }
+                    }
+
                 </div>
                 <!--<div class="text-center"><a href="#"><span class="glyphicon glyphicon-heart-empty">Add To WishList</span></a></div>-->
             </div>
@@ -115,13 +135,32 @@
                 <img src="~/Images/mack.jpg" class="image" />
                 <div class="middle">
                     <div>
-                        <a href="/Home/AddtoCart?cid=@Shopping_Website.Security.SessionManager.Customer.ID&pid=@Model[i].pid"><button type="button" class="btn btn-default add_to_cart_btn"><span class="glyphicon glyphicon-shopping-cart"></span> Add To Cart</button></a>
+                        @{
+        if (Shopping_Website.Security.SessionManager.Customer != null)
+        {
+                    <a href="/Home/AddtoCart?cid=@Shopping_Website.Security.SessionManager.Customer.ID&pid=@Model[i].pid"><button type="button" class="btn btn-default add_to_cart_btn"><span class="glyphicon glyphicon-shopping-cart"></span> Add To Cart</button></a>
+        }
+        else
+        {
+                    <a href="#"><button type="button" class="btn btn-default add_to_cart_btn"><span class="glyphicon glyphicon-shopping-cart"></span> Add To Cart</button></a>
+        }
+                        }
                     </div>
                 </div>
                 <h3 class="text-center">@Model[i].p_name</h3>
                 <div class="text-center" style="font-weight:bold">Price:@Model[i].p_price</div>
                 <div class="text-center">
-                    <a href="/Home/AddtoWishlist?c_id=@Shopping_Website.Security.SessionManager.Customer.ID&p_id=@Model[i++].pid"><button type="button" class="btn btn-default add_to_wish_list"><span class="glyphicon glyphicon-heart-empty"></span>Add To Wishlist</button></a>
+                    @{
+        if (Shopping_Website.Security.SessionManager.Customer != null)
+        {
+            <a href="/Home/AddtoWishlist?c_id=@Shopping_Website.Security.SessionManager.Customer.ID&p_id=@Model[i++].pid"><button type="button" class="btn btn-default add_to_wish_list"><span class="glyphicon glyphicon-heart-empty"></span>Add To Wishlist</button></a>
+        }
+        else
+        {
+            <a href="#"><button type="button" class="btn btn-default add_to_wish_list"><span class="glyphicon glyphicon-heart-empty"></span>Add To Wishlist</button></a>
+        }
+}
+
                 </div>
                 <!--<div class="text-center"><a href="#"><span class="glyphicon glyphicon-heart-empty">Add To WishList</span></a></div>-->
             </div>
@@ -133,13 +172,32 @@
                 <img src="~/Images/camera.jpg" class="image"/>
                 <div class="middle">
                     <div>
-                        <a href="/Home/AddtoCart?cid=@Shopping_Website.Security.SessionManager.Customer.ID&pid=@Model[i].pid"><button type="button" class="btn btn-default add_to_cart_btn"><span class="glyphicon glyphicon-shopping-cart"></span> Add To Cart</button></a>
+                        @{
+        if (Shopping_Website.Security.SessionManager.Customer != null)
+        {
+                    <a href="/Home/AddtoCart?cid=@Shopping_Website.Security.SessionManager.Customer.ID&pid=@Model[i].pid"><button type="button" class="btn btn-default add_to_cart_btn"><span class="glyphicon glyphicon-shopping-cart"></span> Add To Cart</button></a>
+        }
+        else
+        {
+                    <a href="#"><button type="button" class="btn btn-default add_to_cart_btn"><span class="glyphicon glyphicon-shopping-cart"></span> Add To Cart</button></a>
+        }
+                        }
                     </div>
                 </div>
                 <h3 class="text-center">@Model[i].p_name</h3>
                 <div class="text-center" style="font-weight:bold">Price:@Model[i].p_price</div>
                 <div class="text-center">
-                    <a href="/Home/AddtoWishlist?c_id=@Shopping_Website.Security.SessionManager.Customer.ID&p_id=@Model[i++].pid"><button type="button" class="btn btn-default add_to_wish_list"><span class="glyphicon glyphicon-heart-empty"></span>Add To Wishlist</button></a>
+                    @{
+        if (Shopping_Website.Security.SessionManager.Customer != null)
+        {
+            <a href="/Home/AddtoWishlist?c_id=@Shopping_Website.Security.SessionManager.Customer.ID&p_id=@Model[i++].pid"><button type="button" class="btn btn-default add_to_wish_list"><span class="glyphicon glyphicon-heart-empty"></span>Add To Wishlist</button></a>
+        }
+        else
+        {
+            <a href="#"><button type="button" class="btn btn-default add_to_wish_list"><span class="glyphicon glyphicon-heart-empty"></span>Add To Wishlist</button></a>
+        }
+}
+
                 </div>
                 <!--<div class="text-center"><a href="#"><span class="glyphicon glyphicon-heart-empty">Add To WishList</span></a></div>-->
             </div>
@@ -150,13 +208,32 @@
                 <img src="~/Images/shoes.jpg" class="image"/>
                 <div class="middle">
                     <div>
-                        <a href="/Home/AddtoCart?cid=@Shopping_Website.Security.SessionManager.Customer.ID&pid=@Model[i].pid"><button type="button" class="btn btn-default add_to_cart_btn"><span class="glyphicon glyphicon-shopping-cart"></span> Add To Cart</button></a>
+                        @{
+        if (Shopping_Website.Security.SessionManager.Customer != null)
+        {
+                    <a href="/Home/AddtoCart?cid=@Shopping_Website.Security.SessionManager.Customer.ID&pid=@Model[i].pid"><button type="button" class="btn btn-default add_to_cart_btn"><span class="glyphicon glyphicon-shopping-cart"></span> Add To Cart</button></a>
+        }
+        else
+        {
+                    <a href="#"><button type="button" class="btn btn-default add_to_cart_btn"><span class="glyphicon glyphicon-shopping-cart"></span> Add To Cart</button></a>
+        }
+                        }
                     </div>
                 </div>
                 <h3 class="text-center">@Model[i].p_name</h3>
                 <div class="text-center" style="font-weight:bold">Price:@Model[i].p_price</div>
                 <div class="text-center">
-                    <a href="/Home/AddtoWishlist?c_id=@Shopping_Website.Security.SessionManager.Customer.ID&p_id=@Model[i].pid"><button type="button" class="btn btn-default add_to_wish_list"><span class="glyphicon glyphicon-heart-empty"></span>Add To Wishlist</button></a>
+                    @{
+        if (Shopping_Website.Security.SessionManager.Customer != null)
+        {
+            <a href="/Home/AddtoWishlist?c_id=@Shopping_Website.Security.SessionManager.Customer.ID&p_id=@Model[i++].pid"><button type="button" class="btn btn-default add_to_wish_list"><span class="glyphicon glyphicon-heart-empty"></span>Add To Wishlist</button></a>
+        }
+        else
+        {
+            <a href="#"><button type="button" class="btn btn-default add_to_wish_list"><span class="glyphicon glyphicon-heart-empty"></span>Add To Wishlist</button></a>
+        }
+}
+
                 </div>
                 <!--<div class="text-center"><a href="#"><span class="glyphicon glyphicon-heart-empty">Add To WishList</span></a></div>-->
             </div>
@@ -179,14 +256,35 @@
                     <img src="~/Images/samsung%20s8.png" class="image" />
                     <div class="middle">
                         <div>
-                            <a href="#"><button type="button" class="btn btn-default add_to_cart_btn"><span class="glyphicon glyphicon-shopping-cart"></span> Add To Cart</button></a>
+                            @{
+        if (Shopping_Website.Security.SessionManager.Customer != null)
+        {
+                        //<a href="/Home/AddtoCart?cid=@Shopping_Website.Security.SessionManager.Customer.ID&pid=@Model[i].pid"><button type="button" class="btn btn-default add_to_cart_btn"><span class="glyphicon glyphicon-shopping-cart"></span> Add To Cart</button></a>
+            <a href="#"><button type="button" class="btn btn-default add_to_cart_btn"><span class="glyphicon glyphicon-shopping-cart"></span> Add To Cart</button></a>
+        }
+        else
+        {
+                        <a href="#"><button type="button" class="btn btn-default add_to_cart_btn"><span class="glyphicon glyphicon-shopping-cart"></span> Add To Cart</button></a>
+        }
+                            }
                         </div>
                     </div>
 
                     <a style="text-decoration:none" class="text-center" href="#"><h3>Samsung galaxy S8</h3></a>
                     <div class="text-center" style="font-weight:bold">Price:96000</div>
                     <div class="text-center">
-                        <a href="#"><button type="button" class="btn btn-default add_to_wish_list"><span class="glyphicon glyphicon-heart-empty"></span>Add To Wishlist</button></a>
+                        @{
+        if (Shopping_Website.Security.SessionManager.Customer != null)
+        {
+            //<a href="/Home/AddtoWishlist?c_id=@Shopping_Website.Security.SessionManager.Customer.ID&p_id=@Model[i++].pid"><button type="button" class="btn btn-default add_to_wish_list"><span class="glyphicon glyphicon-heart-empty"></span>Add To Wishlist</button></a>
+            <a href="#"><button type="button" class="btn btn-default add_to_wish_list"><span class="glyphicon glyphicon-heart-empty"></span>Add To Wishlist</button></a>
+        }
+        else
+        {
+            <a href="#"><button type="button" class="btn btn-default add_to_wish_list"><span class="glyphicon glyphicon-heart-empty"></span>Add To Wishlist</button></a>
+        }
+}
+
                     </div>
                     <!--<div class="text-center"><a href="#"><span class="glyphicon glyphicon-heart-empty">Add To WishList</span></a></div>-->
                 </div>
@@ -198,14 +296,35 @@
                     <img src="~/Images/samsung%20s8.png" class="image" />
                     <div class="middle">
                         <div>
-                            <a href="#"><button type="button" class="btn btn-default add_to_cart_btn"><span class="glyphicon glyphicon-shopping-cart"></span> Add To Cart</button></a>
+                            @{
+        if (Shopping_Website.Security.SessionManager.Customer != null)
+        {
+                        //<a href="/Home/AddtoCart?cid=@Shopping_Website.Security.SessionManager.Customer.ID&pid=@Model[i].pid"><button type="button" class="btn btn-default add_to_cart_btn"><span class="glyphicon glyphicon-shopping-cart"></span> Add To Cart</button></a>
+            <a href="#"><button type="button" class="btn btn-default add_to_cart_btn"><span class="glyphicon glyphicon-shopping-cart"></span> Add To Cart</button></a>
+        }
+        else
+        {
+                        <a href="#"><button type="button" class="btn btn-default add_to_cart_btn"><span class="glyphicon glyphicon-shopping-cart"></span> Add To Cart</button></a>
+        }
+                            }
                         </div>
                     </div>
 
                     <a style="text-decoration:none" class="text-center" href="#"><h3>Samsung galaxy S8</h3></a>
                     <div class="text-center" style="font-weight:bold">Price:96000</div>
                     <div class="text-center">
-                        <a href="#"><button type="button" class="btn btn-default add_to_wish_list"><span class="glyphicon glyphicon-heart-empty"></span>Add To Wishlist</button></a>
+                        @{
+        if (Shopping_Website.Security.SessionManager.Customer != null)
+        {
+            //<a href="/Home/AddtoWishlist?c_id=@Shopping_Website.Security.SessionManager.Customer.ID&p_id=@Model[i++].pid"><button type="button" class="btn btn-default add_to_wish_list"><span class="glyphicon glyphicon-heart-empty"></span>Add To Wishlist</button></a>
+            <a href="#"><button type="button" class="btn btn-default add_to_wish_list"><span class="glyphicon glyphicon-heart-empty"></span>Add To Wishlist</button></a>
+        }
+        else
+        {
+            <a href="#"><button type="button" class="btn btn-default add_to_wish_list"><span class="glyphicon glyphicon-heart-empty"></span>Add To Wishlist</button></a>
+        }
+}
+
                     </div>
                     <!--<div class="text-center"><a href="#"><span class="glyphicon glyphicon-heart-empty">Add To WishList</span></a></div>-->
                 </div>
@@ -218,14 +337,35 @@
                     <img src="~/Images/samsung%20s8.png" class="image" />
                     <div class="middle">
                         <div>
-                            <a href="#"><button type="button" class="btn btn-default add_to_cart_btn"><span class="glyphicon glyphicon-shopping-cart"></span> Add To Cart</button></a>
+                            @{
+        if (Shopping_Website.Security.SessionManager.Customer != null)
+        {
+                        //<a href="/Home/AddtoCart?cid=@Shopping_Website.Security.SessionManager.Customer.ID&pid=@Model[i].pid"><button type="button" class="btn btn-default add_to_cart_btn"><span class="glyphicon glyphicon-shopping-cart"></span> Add To Cart</button></a>
+            <a href="#"><button type="button" class="btn btn-default add_to_cart_btn"><span class="glyphicon glyphicon-shopping-cart"></span> Add To Cart</button></a>
+        }
+        else
+        {
+                        <a href="#"><button type="button" class="btn btn-default add_to_cart_btn"><span class="glyphicon glyphicon-shopping-cart"></span> Add To Cart</button></a>
+        }
+                            }
                         </div>
                     </div>
 
                     <a style="text-decoration:none" class="text-center" href="#"><h3>Samsung galaxy S8</h3></a>
                     <div class="text-center" style="font-weight:bold">Price:96000</div>
                     <div class="text-center">
-                        <a href="#"><button type="button" class="btn btn-default add_to_wish_list"><span class="glyphicon glyphicon-heart-empty"></span>Add To Wishlist</button></a>
+                       @{
+        if (Shopping_Website.Security.SessionManager.Customer != null)
+        {
+            //<a href="/Home/AddtoWishlist?c_id=@Shopping_Website.Security.SessionManager.Customer.ID&p_id=@Model[i++].pid"><button type="button" class="btn btn-default add_to_wish_list"><span class="glyphicon glyphicon-heart-empty"></span>Add To Wishlist</button></a>
+            <a href="#"><button type="button" class="btn btn-default add_to_wish_list"><span class="glyphicon glyphicon-heart-empty"></span>Add To Wishlist</button></a>
+        }
+        else
+        {
+            <a href="#"><button type="button" class="btn btn-default add_to_wish_list"><span class="glyphicon glyphicon-heart-empty"></span>Add To Wishlist</button></a>
+        }
+}
+
                     </div>
                     <!--<div class="text-center"><a href="#"><span class="glyphicon glyphicon-heart-empty">Add To WishList</span></a></div>-->
                 </div>
@@ -236,13 +376,34 @@
                     <img src="~/Images/samsung%20s8.png" class="image" />
                     <div class="middle">
                         <div>
-                            <a href="#"><button type="button" class="btn btn-default add_to_cart_btn"><span class="glyphicon glyphicon-shopping-cart"></span> Add To Cart</button></a>
+                            @{
+        if (Shopping_Website.Security.SessionManager.Customer != null)
+        {
+                        //<a href="/Home/AddtoCart?cid=@Shopping_Website.Security.SessionManager.Customer.ID&pid=@Model[i].pid"><button type="button" class="btn btn-default add_to_cart_btn"><span class="glyphicon glyphicon-shopping-cart"></span> Add To Cart</button></a>
+            <a href="#"><button type="button" class="btn btn-default add_to_cart_btn"><span class="glyphicon glyphicon-shopping-cart"></span> Add To Cart</button></a>
+        }
+        else
+        {
+                        <a href="#"><button type="button" class="btn btn-default add_to_cart_btn"><span class="glyphicon glyphicon-shopping-cart"></span> Add To Cart</button></a>
+        }
+                            }
                         </div>
                     </div>
                     <a style="text-decoration:none" class="text-center" href="#"><h3>Samsung galaxy S8</h3></a>
                     <div class="text-center" style="font-weight:bold">Price:96000</div>
                     <div class="text-center">
-                        <a href="#"><button type="button" class="btn btn-default add_to_wish_list"><span class="glyphicon glyphicon-heart-empty"></span>Add To Wishlist</button></a>
+                        @{
+        if (Shopping_Website.Security.SessionManager.Customer != null)
+        {
+            //<a href="/Home/AddtoWishlist?c_id=@Shopping_Website.Security.SessionManager.Customer.ID&p_id=@Model[i++].pid"><button type="button" class="btn btn-default add_to_wish_list"><span class="glyphicon glyphicon-heart-empty"></span>Add To Wishlist</button></a>
+            <a href="#"><button type="button" class="btn btn-default add_to_wish_list"><span class="glyphicon glyphicon-heart-empty"></span>Add To Wishlist</button></a>
+        }
+        else
+        {
+            <a href="#"><button type="button" class="btn btn-default add_to_wish_list"><span class="glyphicon glyphicon-heart-empty"></span>Add To Wishlist</button></a>
+        }
+}
+
                     </div>
                     <!--<div class="text-center"><a href="#"><span class="glyphicon glyphicon-heart-empty">Add To WishList</span></a></div>-->
                 </div>
@@ -285,14 +446,35 @@
                 <img src="~/Images/samsung%20s8.png" class="image" />
                 <div class="middle">
                     <div>
-                        <a href="#"><button type="button" class="btn btn-default add_to_cart_btn"><span class="glyphicon glyphicon-shopping-cart"></span> Add To Cart</button></a>
+                        @{
+        if (Shopping_Website.Security.SessionManager.Customer != null)
+        {
+                   //<a href="/Home/AddtoCart?cid=@Shopping_Website.Security.SessionManager.Customer.ID&pid=@Model[i].pid"><button type="button" class="btn btn-default add_to_cart_btn"><span class="glyphicon glyphicon-shopping-cart"></span> Add To Cart</button></a>
+            <a href="#"><button type="button" class="btn btn-default add_to_cart_btn"><span class="glyphicon glyphicon-shopping-cart"></span> Add To Cart</button></a>
+        }
+        else
+        {
+                    <a href="#"><button type="button" class="btn btn-default add_to_cart_btn"><span class="glyphicon glyphicon-shopping-cart"></span> Add To Cart</button></a>
+        }
+                        }
                     </div>
                 </div>
 
                 <a style="text-decoration:none" class="text-center" href="#"><h3>Samsung galaxy S8</h3></a>
                 <div class="text-center" style="font-weight:bold">Price:96000</div>
                 <div class="text-center">
-                    <a href="#"><button type="button" class="btn btn-default add_to_wish_list"><span class="glyphicon glyphicon-heart-empty"></span>Add To Wishlist</button></a>
+                    @{
+        if (Shopping_Website.Security.SessionManager.Customer != null)
+        {
+            //<a href="/Home/AddtoWishlist?c_id=@Shopping_Website.Security.SessionManager.Customer.ID&p_id=@Model[i++].pid"><button type="button" class="btn btn-default add_to_wish_list"><span class="glyphicon glyphicon-heart-empty"></span>Add To Wishlist</button></a>
+            <a href="#"><button type="button" class="btn btn-default add_to_wish_list"><span class="glyphicon glyphicon-heart-empty"></span>Add To Wishlist</button></a>
+        }
+        else
+        {
+            <a href="#"><button type="button" class="btn btn-default add_to_wish_list"><span class="glyphicon glyphicon-heart-empty"></span>Add To Wishlist</button></a>
+        }
+}
+
                 </div>
                 <!--<div class="text-center"><a href="#"><span class="glyphicon glyphicon-heart-empty">Add To WishList</span></a></div>-->
             </div>
@@ -303,14 +485,35 @@
                 <img src="~/Images/samsung%20s8.png" class="image" />
                 <div class="middle">
                     <div>
-                        <a href="#"><button type="button" class="btn btn-default add_to_cart_btn"><span class="glyphicon glyphicon-shopping-cart"></span> Add To Cart</button></a>
+                        @{
+        if (Shopping_Website.Security.SessionManager.Customer != null)
+        {
+                    //<a href="/Home/AddtoCart?cid=@Shopping_Website.Security.SessionManager.Customer.ID&pid=@Model[i].pid"><button type="button" class="btn btn-default add_to_cart_btn"><span class="glyphicon glyphicon-shopping-cart"></span> Add To Cart</button></a>
+            <a href="#"><button type="button" class="btn btn-default add_to_cart_btn"><span class="glyphicon glyphicon-shopping-cart"></span> Add To Cart</button></a>
+        }
+        else
+        {
+                    <a href="#"><button type="button" class="btn btn-default add_to_cart_btn"><span class="glyphicon glyphicon-shopping-cart"></span> Add To Cart</button></a>
+        }
+                        }
                     </div>
                 </div>
 
                 <a style="text-decoration:none" class="text-center" href="#"><h3>Samsung galaxy S8</h3></a>
                 <div class="text-center" style="font-weight:bold">Price:96000</div>
                 <div class="text-center">
-                    <a href="#"><button type="button" class="btn btn-default add_to_wish_list"><span class="glyphicon glyphicon-heart-empty"></span>Add To Wishlist</button></a>
+                    @{
+        if (Shopping_Website.Security.SessionManager.Customer != null)
+        {
+            //<a href="/Home/AddtoWishlist?c_id=@Shopping_Website.Security.SessionManager.Customer.ID&p_id=@Model[i++].pid"><button type="button" class="btn btn-default add_to_wish_list"><span class="glyphicon glyphicon-heart-empty"></span>Add To Wishlist</button></a>
+            <a href="#"><button type="button" class="btn btn-default add_to_wish_list"><span class="glyphicon glyphicon-heart-empty"></span>Add To Wishlist</button></a>
+        }
+        else
+        {
+            <a href="#"><button type="button" class="btn btn-default add_to_wish_list"><span class="glyphicon glyphicon-heart-empty"></span>Add To Wishlist</button></a>
+        }
+}
+
                 </div>
                 <!--<div class="text-center"><a href="#"><span class="glyphicon glyphicon-heart-empty">Add To WishList</span></a></div>-->
             </div>
@@ -322,14 +525,35 @@
                 <img src="~/Images/samsung%20s8.png" class="image" />
                 <div class="middle">
                     <div>
-                        <a href="#"><button type="button" class="btn btn-default add_to_cart_btn"><span class="glyphicon glyphicon-shopping-cart"></span> Add To Cart</button></a>
+                        @{
+        if (Shopping_Website.Security.SessionManager.Customer != null)
+        {
+                    //<a href="/Home/AddtoCart?cid=@Shopping_Website.Security.SessionManager.Customer.ID&pid=@Model[i].pid"><button type="button" class="btn btn-default add_to_cart_btn"><span class="glyphicon glyphicon-shopping-cart"></span> Add To Cart</button></a>
+            <a href="#"><button type="button" class="btn btn-default add_to_cart_btn"><span class="glyphicon glyphicon-shopping-cart"></span> Add To Cart</button></a>
+        }
+        else
+        {
+                    <a href="#"><button type="button" class="btn btn-default add_to_cart_btn"><span class="glyphicon glyphicon-shopping-cart"></span> Add To Cart</button></a>
+        }
+                        }
                     </div>
                 </div>
 
                 <a style="text-decoration:none" class="text-center" href="#"><h3>Samsung galaxy S8</h3></a>
                 <div class="text-center" style="font-weight:bold">Price:96000</div>
                 <div class="text-center">
-                    <a href="#"><button type="button" class="btn btn-default add_to_wish_list"><span class="glyphicon glyphicon-heart-empty"></span>Add To Wishlist</button></a>
+                    @{
+        if (Shopping_Website.Security.SessionManager.Customer != null)
+        {
+            //<a href="/Home/AddtoWishlist?c_id=@Shopping_Website.Security.SessionManager.Customer.ID&p_id=@Model[i++].pid"><button type="button" class="btn btn-default add_to_wish_list"><span class="glyphicon glyphicon-heart-empty"></span>Add To Wishlist</button></a>
+            <a href="#"><button type="button" class="btn btn-default add_to_wish_list"><span class="glyphicon glyphicon-heart-empty"></span>Add To Wishlist</button></a>
+        }
+        else
+        {
+            <a href="#"><button type="button" class="btn btn-default add_to_wish_list"><span class="glyphicon glyphicon-heart-empty"></span>Add To Wishlist</button></a>
+        }
+}
+
                 </div>
                 <!--<div class="text-center"><a href="#"><span class="glyphicon glyphicon-heart-empty">Add To WishList</span></a></div>-->
             </div>
@@ -340,14 +564,35 @@
                 <img src="~/Images/samsung%20s8.png" class="image" />
                 <div class="middle">
                     <div>
-                        <a href="#"><button type="button" class="btn btn-default add_to_cart_btn"><span class="glyphicon glyphicon-shopping-cart"></span> Add To Cart</button></a>
+                        @{
+        if (Shopping_Website.Security.SessionManager.Customer != null)
+        {
+                   //<a href="/Home/AddtoCart?cid=@Shopping_Website.Security.SessionManager.Customer.ID&pid=@Model[i].pid"><button type="button" class="btn btn-default add_to_cart_btn"><span class="glyphicon glyphicon-shopping-cart"></span> Add To Cart</button></a>
+            <a href="#"><button type="button" class="btn btn-default add_to_cart_btn"><span class="glyphicon glyphicon-shopping-cart"></span> Add To Cart</button></a>
+        }
+        else
+        {
+                    <a href="#"><button type="button" class="btn btn-default add_to_cart_btn"><span class="glyphicon glyphicon-shopping-cart"></span> Add To Cart</button></a>
+        }
+                        }
                     </div>
                 </div>
 
                 <a style="text-decoration:none" class="text-center" href="#"><h3>Samsung galaxy S8</h3></a>
                 <div class="text-center" style="font-weight:bold">Price:96000</div>
                 <div class="text-center">
-                    <a href="#"><button type="button" class="btn btn-default add_to_wish_list"><span class="glyphicon glyphicon-heart-empty"></span>Add To Wishlist</button></a>
+                    @{
+        if (Shopping_Website.Security.SessionManager.Customer != null)
+        {
+            //<a href="/Home/AddtoWishlist?c_id=@Shopping_Website.Security.SessionManager.Customer.ID&p_id=@Model[i++].pid"><button type="button" class="btn btn-default add_to_wish_list"><span class="glyphicon glyphicon-heart-empty"></span>Add To Wishlist</button></a>
+            <a href="#"><button type="button" class="btn btn-default add_to_wish_list"><span class="glyphicon glyphicon-heart-empty"></span>Add To Wishlist</button></a>
+        }
+        else
+        {
+            <a href="#"><button type="button" class="btn btn-default add_to_wish_list"><span class="glyphicon glyphicon-heart-empty"></span>Add To Wishlist</button></a>
+        }
+}
+
                 </div>
                 <!--<div class="text-center"><a href="#"><span class="glyphicon glyphicon-heart-empty">Add To WishList</span></a></div>-->
             </div>
